@@ -81,7 +81,7 @@ function Signuppage() {
             />
             <button
               className={`py-2 mt-3 bg-white/20 w-52 rounded-md ${
-                buttonDissabled ? "" : "hover:bg-black/40"
+                buttonDissabled ? "cursor-not-allowed" : "hover:bg-black/40"
               }`}
               onClick={onSignup}
               disabled={buttonDissabled}
