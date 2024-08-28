@@ -12,6 +12,7 @@ function Verifyemailpage() {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    setError(false);
     const urlToken = window.location.search.split("=")[1];
     setToken(urlToken || "");
   }, []);
@@ -22,6 +23,7 @@ function Verifyemailpage() {
 
       const response = await axios.post("/api/users/verifyemail", { token });
       setVerified(true);
+      setError(false);
 
       console.log("Verify success", response.data);
       router.push("/login");
@@ -41,6 +43,9 @@ function Verifyemailpage() {
           </h1>
 
           <div className="flex flex-col gap-4 items-start py-7">
+            <h2 className="text-center w-52 p-2 bg-orange-500 text-black font-bold">
+              {token ? `${token}` : "no token"}
+            </h2>
             <button
               className={`py-2 mt-3 bg-white/20 w-52 rounded-md`}
               onClick={onVerify}
