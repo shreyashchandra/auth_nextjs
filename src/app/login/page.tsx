@@ -19,7 +19,7 @@ function Loginpage() {
 
   const [loading, setLoading] = useState(false);
 
-  const onSignup = async () => {
+  const onLogin = async () => {
     try {
       setLoading(true);
 
@@ -46,7 +46,7 @@ function Loginpage() {
       <div className="w-full flex items-center justify-center">
         <div className="flex flex-col items-center justify-center  py-2 border-2 border-white w-[700px] bg-white/10 mt-52">
           <h1 className="text-3xl font-semibold pb-2 mb-2">
-            {loading ? "Processing" : "Signup"}
+            {loading ? "Processing" : "Login"}
           </h1>
 
           <div className="flex flex-col gap-4 items-start py-7">
@@ -70,7 +70,7 @@ function Loginpage() {
               className={`py-2 mt-3 bg-white/20 w-52 rounded-md ${
                 buttonDissabled ? "cursor-not-allowed" : "hover:bg-black/40"
               }`}
-              onClick={onSignup}
+              onClick={onLogin}
               disabled={buttonDissabled}
             >
               {buttonDissabled ? "Please Fill The Form" : "Login"}
